@@ -18,6 +18,7 @@ import {Events} from "../../Services/Events";
 const useStyles = makeStyles(theme => ({
   shuffleButton: {
       position: 'fixed',
+      zIndex: 9999,
       bottom: theme.spacing(2),
       right: theme.spacing(2),
   }

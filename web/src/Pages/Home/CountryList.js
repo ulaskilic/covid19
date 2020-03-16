@@ -57,7 +57,7 @@ const CountryList = props => {
     ];
 
     return (
-        <div style={{marginBottom: '24px'}}>
+        <div style={{marginBottom: '64px'}}>
             <MaterialTable columns={columns} data={data} title="Country list"/>
         </div>
     )

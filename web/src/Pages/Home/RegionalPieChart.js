@@ -41,7 +41,7 @@ const RegionalPieChart = props => {
     };
     return (
         <div>
-            {!loading && <Chart options={data.options} series={data.data} type='pie' height={250}/>}
+            {!loading && <Chart options={data.options} series={data.data} type='pie'/>}
         </div>
     )
 };
