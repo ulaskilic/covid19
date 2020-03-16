@@ -1,0 +1,53 @@
+@mixin mixKeyFrames($animationName) {
+  @-webkit-keyframes #{$animationName} {
+    @content;
+  }
+  @-moz-keyframes #{$animationName} {
+    @content;
+  }
+  @-o-keyframes #{$animationName} {
+    @content;
+  }
+  @keyframes #{$animationName} {
+    @content;
+  }
+}
+
+@include mixKeyFrames(animateFadeIn) {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@include mixKeyFrames(animateInfiniteFade) {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+div.wordsContainer {
+  & span {
+    animation: animateFadeIn 2s;
+  }
+
+  span.italic {
+    font-style: italic;
+  }
+
+  span.bold {
+    font-weight: bolder;
+  }
+
+  span.fade {
+    animation: animateInfiniteFade 2s infinite !important;
+  }
+}

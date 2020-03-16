@@ -1,0 +1,19 @@
+@import 'reset';
+@import 'animation';
+
+.tiny-scrollbar::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 6px #1b1b1b;
+  background-color: #1b1b1b;
+}
+
+.tiny-scrollbar::-webkit-scrollbar
+{
+  width: 3px;
+  background-color: #ff7f00;
+}
+
+.tiny-scrollbar::-webkit-scrollbar-thumb
+{
+  background-color: #ff7f00;
+}

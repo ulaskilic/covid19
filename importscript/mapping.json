@@ -1,0 +1,817 @@
+[
+  {
+    "worldometer": "China",
+    "who": "China",
+    "mappingCountry": "CN"
+  },
+  {
+    "worldometer": "Italy",
+    "who": "Italy",
+    "mappingCountry": "IT"
+  },
+  {
+    "worldometer": "Iran",
+    "who": "Iran",
+    "mappingCountry": "IR"
+  },
+  {
+    "worldometer": "S. Korea",
+    "who": "Korea, South",
+    "mappingCountry": "KR"
+  },
+  {
+    "worldometer": "Spain",
+    "who": "Spain",
+    "mappingCountry": "ES"
+  },
+  {
+    "worldometer": "Germany",
+    "who": "Germany",
+    "mappingCountry": "DE"
+  },
+  {
+    "worldometer": "France",
+    "who": "France",
+    "mappingCountry": "FR"
+  },
+  {
+    "worldometer": "USA",
+    "who": "US",
+    "mappingCountry": "US"
+  },
+  {
+    "worldometer": "Switzerland",
+    "who": "Switzerland",
+    "mappingCountry": "CH"
+  },
+  {
+    "worldometer": "UK",
+    "who": "United Kingdom",
+    "mappingCountry": "GB"
+  },
+  {
+    "worldometer": "Norway",
+    "who": "Norway",
+    "mappingCountry": "NO"
+  },
+  {
+    "worldometer": "Netherlands",
+    "who": "Netherlands",
+    "mappingCountry": "NL"
+  },
+  {
+    "worldometer": "Sweden",
+    "who": "Sweden",
+    "mappingCountry": "SE"
+  },
+  {
+    "worldometer": "Belgium",
+    "who": "Belgium",
+    "mappingCountry": "BE"
+  },
+  {
+    "worldometer": "Denmark",
+    "who": "Denmark",
+    "mappingCountry": "DK"
+  },
+  {
+    "worldometer": "Austria",
+    "who": "Austria",
+    "mappingCountry": "AT"
+  },
+  {
+    "worldometer": "Japan",
+    "who": "Japan",
+    "mappingCountry": "JP"
+  },
+  {
+    "worldometer": "Diamond Princess",
+    "who": "Cruise Ship",
+    "mappingCountry": "X1"
+  },
+  {
+    "worldometer": "Malaysia",
+    "who": "Malaysia",
+    "mappingCountry": "MY"
+  },
+  {
+    "worldometer": "Qatar",
+    "who": "Qatar",
+    "mappingCountry": "QA"
+  },
+  {
+    "worldometer": "Greece",
+    "who": "Greece",
+    "mappingCountry": "GR"
+  },
+  {
+    "worldometer": "Canada",
+    "who": "Canada",
+    "mappingCountry": "CA"
+  },
+  {
+    "worldometer": "Australia",
+    "who": "Australia",
+    "mappingCountry": "AU"
+  },
+  {
+    "worldometer": "Czechia",
+    "who": "Czechia",
+    "mappingCountry": "CZ"
+  },
+  {
+    "worldometer": "Portugal",
+    "who": "Portugal",
+    "mappingCountry": "PT"
+  },
+  {
+    "worldometer": "Finland",
+    "who": "Finland",
+    "mappingCountry": "FI"
+  },
+  {
+    "worldometer": "Singapore",
+    "who": "Singapore",
+    "mappingCountry": "SG"
+  },
+  {
+    "worldometer": "Slovenia",
+    "who": "Slovenia",
+    "mappingCountry": "SI"
+  },
+  {
+    "worldometer": "Bahrain",
+    "who": "Bahrain",
+    "mappingCountry": "BH"
+  },
+  {
+    "worldometer": "Israel",
+    "who": "Israel",
+    "mappingCountry": "IL"
+  },
+  {
+    "worldometer": "Estonia",
+    "who": "Estonia",
+    "mappingCountry": "EE"
+  },
+  {
+    "worldometer": "Iceland",
+    "who": "Iceland",
+    "mappingCountry": "IS"
+  },
+  {
+    "worldometer": "Ireland",
+    "who": "Ireland",
+    "mappingCountry": "IE"
+  },
+  {
+    "worldometer": "Hong Kong",
+    "who": "Hong Kong",
+    "mappingCountry": "HK"
+  },
+  {
+    "worldometer": "Philippines",
+    "who": "Philippines",
+    "mappingCountry": "PH"
+  },
+  {
+    "worldometer": "Romania",
+    "who": "Romania",
+    "mappingCountry": "RO"
+  },
+  {
+    "worldometer": "Iraq",
+    "who": "Iraq",
+    "mappingCountry": "IQ"
+  },
+  {
+    "worldometer": "Poland",
+    "who": "Poland",
+    "mappingCountry": "PL"
+  },
+  {
+    "worldometer": "Brazil",
+    "who": "Brazil",
+    "mappingCountry": "BR"
+  },
+  {
+    "worldometer": "Indonesia",
+    "who": "Indonesia",
+    "mappingCountry": "ID"
+  },
+  {
+    "worldometer": "Thailand",
+    "who": "Thailand",
+    "mappingCountry": "TH"
+  },
+  {
+    "worldometer": "Kuwait",
+    "who": "Kuwait",
+    "mappingCountry": "KW"
+  },
+  {
+    "worldometer": "India",
+    "who": "India",
+    "mappingCountry": "IN"
+  },
+  {
+    "worldometer": "Egypt",
+    "who": "Egypt",
+    "mappingCountry": "EG"
+  },
+  {
+    "worldometer": "Saudi Arabia",
+    "who": "Saudi Arabia",
+    "mappingCountry": "SA"
+  },
+  {
+    "worldometer": "San Marino",
+    "who": "San Marino",
+    "mappingCountry": "SM"
+  },
+  {
+    "worldometer": "Lebanon",
+    "who": "Lebanon",
+    "mappingCountry": "LB"
+  },
+  {
+    "worldometer": "UAE",
+    "who": "United Arab Emirates",
+    "mappingCountry": "AE"
+  },
+  {
+    "worldometer": "Chile",
+    "who": "Chile",
+    "mappingCountry": "CL"
+  },
+  {
+    "worldometer": "Peru",
+    "who": "Peru",
+    "mappingCountry": "PE"
+  },
+  {
+    "worldometer": "Russia",
+    "who": "Russia",
+    "mappingCountry": "RU"
+  },
+  {
+    "worldometer": "Slovakia",
+    "who": "Slovakia",
+    "mappingCountry": "SK"
+  },
+  {
+    "worldometer": "South Africa",
+    "who": "South Africa",
+    "mappingCountry": "ZA"
+  },
+  {
+    "worldometer": "Luxembourg",
+    "who": "Luxembourg",
+    "mappingCountry": "LU"
+  },
+  {
+    "worldometer": "Taiwan",
+    "who": "Taiwan*",
+    "mappingCountry": "TW"
+  },
+  {
+    "worldometer": "Vietnam",
+    "who": "Vietnam",
+    "mappingCountry": "VN"
+  },
+  {
+    "worldometer": "Pakistan",
+    "who": "Pakistan",
+    "mappingCountry": "PK"
+  },
+  {
+    "worldometer": "Bulgaria",
+    "who": "Bulgaria",
+    "mappingCountry": "BG"
+  },
+  {
+    "worldometer": "Brunei",
+    "who": "Brunei",
+    "mappingCountry": "BN"
+  },
+  {
+    "worldometer": "Croatia",
+    "who": "Croatia",
+    "mappingCountry": "HR"
+  },
+  {
+    "worldometer": "Algeria",
+    "who": "Algeria",
+    "mappingCountry": "DZ"
+  },
+  {
+    "worldometer": "Serbia",
+    "who": "Serbia",
+    "mappingCountry": "RS"
+  },
+  {
+    "worldometer": "Argentina",
+    "who": "Argentina",
+    "mappingCountry": "AR"
+  },
+  {
+    "worldometer": "Panama",
+    "who": "Panama",
+    "mappingCountry": "PA"
+  },
+  {
+    "worldometer": "Mexico",
+    "who": "Mexico",
+    "mappingCountry": "MX"
+  },
+  {
+    "worldometer": "Albania",
+    "who": "Albania",
+    "mappingCountry": "AL"
+  },
+  {
+    "worldometer": "Palestine",
+    "who": "occupied Palestinian territory",
+    "mappingCountry": "PS"
+  },
+  {
+    "worldometer": "Colombia",
+    "who": "Colombia",
+    "mappingCountry": "CO"
+  },
+  {
+    "worldometer": "Georgia",
+    "who": "Georgia",
+    "mappingCountry": "GE"
+  },
+  {
+    "worldometer": "Cyprus",
+    "who": "Cyprus",
+    "mappingCountry": "CY"
+  },
+  {
+    "worldometer": "Hungary",
+    "who": "Hungary",
+    "mappingCountry": "HU"
+  },
+  {
+    "worldometer": "Latvia",
+    "who": "Latvia",
+    "mappingCountry": "LV"
+  },
+  {
+    "worldometer": "Ecuador",
+    "who": "Ecuador",
+    "mappingCountry": "EC"
+  },
+  {
+    "worldometer": "Morocco",
+    "who": "Morocco",
+    "mappingCountry": "MA"
+  },
+  {
+    "worldometer": "Belarus",
+    "who": "Belarus",
+    "mappingCountry": "BY"
+  },
+  {
+    "worldometer": "Costa Rica",
+    "who": "Costa Rica",
+    "mappingCountry": "CR"
+  },
+  {
+    "worldometer": "Armenia",
+    "who": "Armenia",
+    "mappingCountry": "AM"
+  },
+  {
+    "worldometer": "Senegal",
+    "who": "Senegal",
+    "mappingCountry": "SN"
+  },
+  {
+    "worldometer": "Bosnia and Herzegovina",
+    "who": "Bosnia and Herzegovina",
+    "mappingCountry": "BA"
+  },
+  {
+    "worldometer": "Azerbaijan",
+    "who": "Azerbaijan",
+    "mappingCountry": "AZ"
+  },
+  {
+    "worldometer": "Moldova",
+    "who": "Moldova",
+    "mappingCountry": "MD"
+  },
+  {
+    "worldometer": "Oman",
+    "who": "Oman",
+    "mappingCountry": "OM"
+  },
+  {
+    "worldometer": "Malta",
+    "who": "Malta",
+    "mappingCountry": "MT"
+  },
+  {
+    "worldometer": "Tunisia",
+    "who": "Tunisia",
+    "mappingCountry": "TN"
+  },
+  {
+    "worldometer": "North Macedonia",
+    "who": "North Macedonia",
+    "mappingCountry": "MK"
+  },
+  {
+    "worldometer": "Sri Lanka",
+    "who": "Sri Lanka",
+    "mappingCountry": "LK"
+  },
+  {
+    "worldometer": "Afghanistan",
+    "who": "Afghanistan",
+    "mappingCountry": "AF"
+  },
+  {
+    "worldometer": "Maldives",
+    "who": "Maldives",
+    "mappingCountry": "MV"
+  },
+  {
+    "worldometer": "Cambodia",
+    "who": "Cambodia",
+    "mappingCountry": "KH"
+  },
+  {
+    "worldometer": "Lithuania",
+    "who": "Lithuania",
+    "mappingCountry": "LT"
+  },
+  {
+    "worldometer": "Macao",
+    "who": "Macao",
+    "mappingCountry": "MO"
+  },
+  {
+    "worldometer": "Dominican Republic",
+    "who": "Dominican Republic",
+    "mappingCountry": "DO"
+  },
+  {
+    "worldometer": "Faeroe Islands",
+    "who": "Faeroe Islands",
+    "mappingCountry": "FO"
+  },
+  {
+    "worldometer": "Jordan",
+    "who": "Jordan",
+    "mappingCountry": "JO"
+  },
+  {
+    "worldometer": "Bolivia",
+    "who": "Bolivia",
+    "mappingCountry": "BO"
+  },
+  {
+    "worldometer": "Jamaica",
+    "who": "Jamaica",
+    "mappingCountry": "JM"
+  },
+  {
+    "worldometer": "Martinique",
+    "who": "Martinique",
+    "mappingCountry": "MQ"
+  },
+  {
+    "worldometer": "Venezuela",
+    "who": "Venezuela",
+    "mappingCountry": "VE"
+  },
+  {
+    "worldometer": "Kazakhstan",
+    "who": "Kazakhstan",
+    "mappingCountry": "KZ"
+  },
+  {
+    "worldometer": "New Zealand",
+    "who": "New Zealand",
+    "mappingCountry": "NZ"
+  },
+  {
+    "worldometer": "French Guiana",
+    "who": "French Guiana",
+    "mappingCountry": "GF"
+  },
+  {
+    "worldometer": "Liechtenstein",
+    "who": "Liechtenstein",
+    "mappingCountry": "LI"
+  },
+  {
+    "worldometer": "Paraguay",
+    "who": "Paraguay",
+    "mappingCountry": "PY"
+  },
+  {
+    "worldometer": "Réunion",
+    "who": "Reunion",
+    "mappingCountry": "RE"
+  },
+  {
+    "worldometer": "Ghana",
+    "who": "Ghana",
+    "mappingCountry": "GH"
+  },
+  {
+    "worldometer": "Turkey",
+    "who": "Turkey",
+    "mappingCountry": "TR"
+  },
+  {
+    "worldometer": "Uruguay",
+    "who": "Uruguay",
+    "mappingCountry": "UY"
+  },
+  {
+    "worldometer": "Andorra",
+    "who": "Andorra",
+    "mappingCountry": "AD"
+  },
+  {
+    "worldometer": "Bangladesh",
+    "who": "Bangladesh",
+    "mappingCountry": "BD"
+  },
+  {
+    "worldometer": "Guyana",
+    "who": "Guyana",
+    "mappingCountry": "GY"
+  },
+  {
+    "worldometer": "Ivory Coast",
+    "who": "Cote d'Ivoire",
+    "mappingCountry": "CI"
+  },
+  {
+    "worldometer": "Cuba",
+    "who": "Cuba",
+    "mappingCountry": "CU"
+  },
+  {
+    "worldometer": "Ethiopia",
+    "who": "Ethiopia",
+    "mappingCountry": "ET"
+  },
+  {
+    "worldometer": "Puerto Rico",
+    "who": "Puerto Rico",
+    "mappingCountry": "PR"
+  },
+  {
+    "worldometer": "Ukraine",
+    "who": "Ukraine",
+    "mappingCountry": "UA"
+  },
+  {
+    "worldometer": "Burkina Faso",
+    "who": "Burkina Faso",
+    "mappingCountry": "BF"
+  },
+  {
+    "worldometer": "Channel Islands",
+    "who": "Channel Islands",
+    "mappingCountry": "X2"
+  },
+  {
+    "worldometer": "French Polynesia",
+    "who": "French Polynesia",
+    "mappingCountry": "PF"
+  },
+  {
+    "worldometer": "Guadeloupe",
+    "who": "Guadeloupe",
+    "mappingCountry": "GP"
+  },
+  {
+    "worldometer": "Guam",
+    "who": "Guam",
+    "mappingCountry": "GU"
+  },
+  {
+    "worldometer": "Honduras",
+    "who": "Honduras",
+    "mappingCountry": "HN"
+  },
+  {
+    "worldometer": "Kenya",
+    "who": "Kenya",
+    "mappingCountry": "KE"
+  },
+  {
+    "worldometer": "Seychelles",
+    "who": "Seychelles",
+    "mappingCountry": "SC"
+  },
+  {
+    "worldometer": "Monaco",
+    "who": "Monaco",
+    "mappingCountry": "MC"
+  },
+  {
+    "worldometer": "Nigeria",
+    "who": "Nigeria",
+    "mappingCountry": "NG"
+  },
+  {
+    "worldometer": "Aruba",
+    "who": "Aruba",
+    "mappingCountry": "AW"
+  },
+  {
+    "worldometer": "Cameroon",
+    "who": "Cameroon",
+    "mappingCountry": "CM"
+  },
+  {
+    "worldometer": "Curaçao",
+    "who": "Curacao",
+    "mappingCountry": "CW"
+  },
+  {
+    "worldometer": "DRC",
+    "who": "Congo (Kinshasa)",
+    "mappingCountry": "CD"
+  },
+  {
+    "worldometer": "Namibia",
+    "who": "Namibia",
+    "mappingCountry": "NA"
+  },
+  {
+    "worldometer": "Saint Lucia",
+    "who": "Saint Lucia",
+    "mappingCountry": "LC"
+  },
+  {
+    "worldometer": "Saint Martin",
+    "who": "St Martin",
+    "mappingCountry": "MF"
+  },
+  {
+    "worldometer": "Trinidad and Tobago",
+    "who": "Trinidad and Tobago",
+    "mappingCountry": "TT"
+  },
+  {
+    "worldometer": "Sudan",
+    "who": "Sudan",
+    "mappingCountry": "SD"
+  },
+  {
+    "worldometer": "Nepal",
+    "who": "Nepal",
+    "mappingCountry": "NP"
+  },
+  {
+    "worldometer": "Antigua and Barbuda",
+    "who": "Antigua and Barbuda",
+    "mappingCountry": "AG"
+  },
+  {
+    "worldometer": "Bahamas",
+    "who": "",
+    "mappingCountry": "BS"
+  },
+  {
+    "worldometer": "Bhutan",
+    "who": "Bhutan",
+    "mappingCountry": "BT"
+  },
+  {
+    "worldometer": "Cayman Islands",
+    "who": "Cayman Islands",
+    "mappingCountry": "KY"
+  },
+  {
+    "worldometer": "CAR",
+    "who": "Central African Republic",
+    "mappingCountry": "CF"
+  },
+  {
+    "worldometer": "Congo",
+    "who": "Congo (Brazzaville)",
+    "mappingCountry": "CG"
+  },
+  {
+    "worldometer": "Equatorial Guinea",
+    "who": "Equatorial Guinea",
+    "mappingCountry": "GQ"
+  },
+  {
+    "worldometer": "Gabon",
+    "who": "Gabon",
+    "mappingCountry": "GA"
+  },
+  {
+    "worldometer": "Gibraltar",
+    "who": "Gibraltar",
+    "mappingCountry": "GI"
+  },
+  {
+    "worldometer": "Guatemala",
+    "who": "Guatemala",
+    "mappingCountry": "GT"
+  },
+  {
+    "worldometer": "Guinea",
+    "who": "Guinea",
+    "mappingCountry": "GN"
+  },
+  {
+    "worldometer": "Vatican City",
+    "who": "Holy See",
+    "mappingCountry": "VA"
+  },
+  {
+    "worldometer": "Mauritania",
+    "who": "Mauritania",
+    "mappingCountry": "MR"
+  },
+  {
+    "worldometer": "Mayotte",
+    "who": "Mayotte",
+    "mappingCountry": "YT"
+  },
+  {
+    "worldometer": "Mongolia",
+    "who": "Mongolia",
+    "mappingCountry": "MN"
+  },
+  {
+    "worldometer": "Rwanda",
+    "who": "Rwanda",
+    "mappingCountry": "RW"
+  },
+  {
+    "worldometer": "St. Barth",
+    "who": "Saint Barthelemy",
+    "mappingCountry": "BL"
+  },
+  {
+    "worldometer": "St. Vincent Grenadines",
+    "who": "Saint Vincent and the Grenadines",
+    "mappingCountry": "VC"
+  },
+  {
+    "worldometer": "Suriname",
+    "who": "Suriname",
+    "mappingCountry": "SR"
+  },
+  {
+    "worldometer": "Eswatini",
+    "who": "Eswatini",
+    "mappingCountry": "SZ"
+  },
+  {
+    "worldometer": "Togo",
+    "who": "Togo",
+    "mappingCountry": "TG"
+  },
+  {
+    "worldometer": "U.S. Virgin Islands",
+    "who": "Virgin Islands, U.S.",
+    "mappingCountry": "VI"
+  },
+  {
+    "worldometer": "Uzbekistan",
+    "who": "Uzbekistan",
+    "mappingCountry": "UZ"
+  },
+  {
+    "worldometer": "Liberia",
+    "who": "",
+    "mappingCountry": "LR"
+  },
+  {
+    "worldometer": "Tanzania",
+    "who": "",
+    "mappingCountry": "TZ"
+  },
+  {
+    "worldometer": "Somalia",
+    "who": "",
+    "mappingCountry": "SO"
+  },
+  {
+    "worldometer": "Greenland",
+    "who": "",
+    "mappingCountry": "GL"
+  },
+  {
+    "worldometer": "Benin",
+    "who": "",
+    "mappingCountry": "BJ"
+  }
+]
