@@ -27,7 +27,17 @@ const RegionalPieChart = props => {
             }
             setData({
                 options: {
-                    labels: labels
+                    labels: labels,
+                    responsive: [
+                        {
+                            breakpoint: 412,
+                            options: {
+                                legend: {
+                                    position: 'top'
+                                }
+                            }
+                        }
+                    ]
                 },
                 data: datas,
             });

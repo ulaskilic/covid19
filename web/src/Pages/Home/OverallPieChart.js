@@ -24,6 +24,16 @@ const OverallPieChart = props => {
                 options: {
                     labels: ['Active Case', 'Death', 'Recovered'],
                     colors: ['#008ffb', '#ff4560', '#00e396'],
+                    responsive: [
+                        {
+                            breakpoint: 412,
+                            options: {
+                                legend: {
+                                    position: 'top'
+                                }
+                            }
+                        }
+                    ]
                 },
                 data: [
                     (response.totalConfirmed - (response.totalDeath + response.totalRecovered)),
