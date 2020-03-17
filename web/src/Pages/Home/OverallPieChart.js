@@ -18,7 +18,7 @@ const OverallPieChart = props => {
 
     const fetchData = async () => {
         const {data, ok} = await api.total();
-        if(ok) {
+        if(ok && data[0]) {
             const response = data[0];
             setData({
                 options: {

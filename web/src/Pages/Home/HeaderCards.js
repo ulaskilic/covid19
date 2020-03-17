@@ -29,7 +29,7 @@ const HeaderCards = props => {
 
     const fetchData = async () => {
       const {data, ok} = await api.total();
-      if(ok) {
+      if(ok && data[0]) {
           setData(data[0]);
           setStore({type: 'lastUpdated', payload: data[0].lastUpdated})
       }
