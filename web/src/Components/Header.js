@@ -23,7 +23,7 @@ const Header = props => {
                 <Typography variant="h6" className={classes.title}>
                     Covid-19 Stats
                 </Typography>
-                <Typography component="p">
+                <Typography variant="caption">
                     {store.lastUpdated && <span>Last updated: <Moment fromNow>{store.lastUpdated}</Moment></span>}
                 </Typography>
             </Toolbar>

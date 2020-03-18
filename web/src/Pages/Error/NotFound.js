@@ -1,6 +1,7 @@
 import {Card, CardHeader, Container, Grid} from "@material-ui/core";
 import React from "react";
 import {makeStyles} from "@material-ui/core/styles";
+import {useParams} from "react-router-dom";
 
 const useStyles = makeStyles(theme => ({
     margin: {
@@ -13,7 +14,7 @@ const useStyles = makeStyles(theme => ({
 
 const NotFound = props => {
     const classes = useStyles();
-
+    const params = useParams();
     return (
         <Container style={{marginTop: '24px'}}>
             <Grid container justify="center">

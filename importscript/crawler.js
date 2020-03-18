@@ -8,6 +8,7 @@ const moment = require('moment');
 const md5 = require('crypto-js/md5');
 const c = new Crawler();
 const cron = require('node-cron');
+const csvtojson = require('csvtojson');
 
 const covid19Schema = new mongoose.Schema({
     timestamp: Date,
@@ -42,8 +43,8 @@ async function run() {
 run();
 
 async function crawl() {
-    const countries = JSON.parse(await fs.readFile('./countries.json'));
-    const mapping = JSON.parse(await fs.readFile('./mapping.json'));
+    const countries = JSON.parse(await fs.readFile('./store/countries.json'));
+    const mapping = await csvtojson({checkType: true}).fromFile('./store/map.csv');
 
     cron.schedule('*/5 * * * *', () => {
         c.queue([{
@@ -109,9 +110,16 @@ async function crawl() {
                         for (const item of finalList) {
                             const find = await Covid19.findOne({name: item.name, day: item.day});
                             if(find) {
-                                find.confirmed = find.confirmed > item.confirmed ? find.confirmed : item.confirmed;
-                                find.death = find.death > item.death ? find.death : item.death;
-                                find.cured = find.cured > item.cured ? find.cured : item.cured;
+                                // Baş koymuşum türkiyemin yoluna :]
+                                if(find.code == 'TR') {
+                                    find.confirmed = find.confirmed > item.confirmed ? find.confirmed : item.confirmed;
+                                    find.death = find.death > item.death ? find.death : item.death;
+                                    find.cured = find.cured > item.cured ? find.cured : item.cured;
+                                } else {
+                                    find.confiremd = item.confirmed;
+                                    find.death = item.death;
+                                    find.cured = item.cured
+                                }
                                 find.timestamp = item.timestamp;
                                 await find.save();
                             } else {

@@ -1,10 +1,12 @@
 import React, {useEffect, useState} from "react";
-import {api} from "../../Services/Api";
 import MaterialTable from "material-table";
 import {Events} from "../../Services/Events";
+import withStore from "../../Contexts/GlobalStore/withStore";
+import {useHistory} from 'react-router-dom';
 
 const CountryList = props => {
     const [data, setData] = useState([]);
+    const history = useHistory();
     useEffect(() => {
         fetchData();
         const eventId = Events.on('refresh', () => {
@@ -16,7 +18,7 @@ const CountryList = props => {
     }, []);
 
     const fetchData = async () => {
-        const {data, ok} = await api.countryList();
+        const {data, ok} = await props.api.details({type: 'country'});
         if(ok) {
             setData(data.map(i => {
                 i.activeCases = i.confirmed - (i.death + i.cured);
@@ -26,7 +28,7 @@ const CountryList = props => {
     };
 
     const columns = [
-        {title: 'Country', field: 'name'},
+        {title: 'Country', field: 'country'},
         {title: 'Country Code', field: 'code'},
         {title: 'Region', field: 'region'},
         {
@@ -58,9 +60,11 @@ const CountryList = props => {
 
     return (
         <div style={{marginBottom: '64px'}}>
-            <MaterialTable columns={columns} data={data} title="Country list"/>
+            <MaterialTable options={{pageSize: 20}} columns={columns} data={data} title="Country list" onRowClick={(event, row) => {
+                history.push(`/country/${row.country}`)
+            }}/>
         </div>
     )
 };
 
-export default CountryList;
+export default withStore(CountryList);

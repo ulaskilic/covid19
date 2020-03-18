@@ -1,0 +1,6 @@
+Jersey -> mapped to ChannelIsland
+Guernsey -> Mapped to ChannelIsland
+Guam -> Getting under the US
+Puerto Rico -> Getting under the US
+Mayotte -> Getting under the France
+Republic of Congo -> Already mapped with Congo (Brazzaville)

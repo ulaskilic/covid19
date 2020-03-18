@@ -1,24 +1,30 @@
-import {Card, CardContent, CardHeader, Container, Fab, Grid, Icon} from "@material-ui/core";
+import {Card, CardContent, CardHeader, Container, Fab, Grid, Icon, Paper, Typography} from "@material-ui/core";
 import React, {useEffect} from "react";
 import {makeStyles} from "@material-ui/core/styles";
 import withStore from "../../Contexts/GlobalStore/withStore";
+
 import CountryList from "./CountryList";
 import HeaderCards from "../../Components/HeaderCards";
 import {Events} from "../../Services/Events";
 import PieChart from "../../Components/PieChart";
 import LineChart from "../../Components/LineChart";
-
+import {useParams} from 'react-router-dom';
 const useStyles = makeStyles(theme => ({
     shuffleButton: {
         position: 'fixed',
         zIndex: 9999,
         bottom: theme.spacing(2),
         right: theme.spacing(2),
+    },
+    padding: {
+        padding: theme.spacing(1)
     }
 }));
-const Home = props => {
+const Country = props => {
     const classes = useStyles();
     const {store, setStore} = props.context;
+    const {countryName} = useParams();
+
     useEffect(() => {
 
     }, []);
@@ -31,7 +37,12 @@ const Home = props => {
         <Container style={{marginTop: '24px'}}>
             <Grid container spacing={2}>
                 <Grid item lg={12} md={12} sm={12} xs={12}>
-                    <HeaderCards/>
+                    <Paper elevation={3} className={classes.padding}>
+                        <Typography variant="h6" align="center">{countryName}</Typography>
+                    </Paper>
+                </Grid>
+                <Grid item lg={12} md={12} sm={12} xs={12}>
+                    <HeaderCards query={{type: 'country', search: countryName}}/>
                 </Grid>
                 <Grid item lg={4} md={4} sm={12} xs={12}>
                     <Card>
@@ -42,6 +53,7 @@ const Home = props => {
                                 labels={['Active Case', 'Death', 'Recovered']}
                                 colors={['#008ffb', '#ff4560', '#00e396']}
                                 dataFields={['active', 'death', 'cured']}
+                                query={{type: 'country', search: countryName}}
                             />
                         </CardContent>
                     </Card>
@@ -49,6 +61,7 @@ const Home = props => {
                 <Grid item lg={8} md={8} sm={12} xs={12}>
                     {/*<OverallLineChart/>*/}
                     <LineChart
+                        query={{type: 'country', search: countryName}}
                         xAxisLabelField='day'
                         series={[
                             {key: 'Affected', value: 'confirmed'},
@@ -59,30 +72,6 @@ const Home = props => {
                         colors={['#008ffb', '#feb019', '#00e396', '#ff4560']}
                     />
                 </Grid>
-                <Grid item lg={4} md={4} sm={12} xs={12}>
-                    <Card>
-                        <CardHeader title="Regional Active Cases"/>
-                        <CardContent>
-                            {/*<RegionalPieChart/>*/}
-                            <PieChart
-                                labelField='region'
-                                dataFields={['active']}
-                                query={{type: 'region'}}
-                            />
-                        </CardContent>
-                    </Card>
-                </Grid>
-                <Grid item lg={8} md={8} sm={12} xs={12}>
-                    {/*<RegionalLineChart/>*/}
-                    <LineChart
-                        xAxisLabelField='day'
-                        seriesField={{key: 'region', value: 'active'}}
-                        query={{type: 'region'}}
-                    />
-                </Grid>
-                <Grid item lg={12} md={12} sm={12} xs={12}>
-                    <CountryList/>
-                </Grid>
             </Grid>
 
             <Fab color="primary" aria-label="add" className={classes.shuffleButton} onClick={refreshData}>
@@ -92,4 +81,4 @@ const Home = props => {
     )
 };
 
-export default withStore(Home);
+export default withStore(Country);

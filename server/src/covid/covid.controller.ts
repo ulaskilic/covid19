@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Query } from '@nestjs/common';
 import { CovidService } from './covid.service';
 
 @Controller('covid')
@@ -6,29 +6,16 @@ export class CovidController {
   constructor(private covidService: CovidService) {
   }
 
-  @Get('countryList')
-  async latestCountryList(): Promise<any> {
-    return this.covidService.latestCountryList();
+  @Get()
+  async _total(
+    @Query('type') type = 'global',
+    @Query('search') search = null): Promise<any> {
+    return this.covidService.getDetails(type, search);
   }
 
-  @Get('total')
-  async total(): Promise<any> {
-    return this.covidService.total();
-  }
-
-  @Get('totalTimeSeries')
-  async totalTimeSeries(): Promise<any> {
-    return this.covidService.totalTimeSeries();
-  }
-
-  @Get('totalRegion')
-  async totalRegion(): Promise<any> {
-    return this.covidService.totalRegion();
-  }
-
-  @Get('totalRegionTimeSeries')
-  async totalRegionTimeSeries(): Promise<any> {
-    return this.covidService.totalRegionTimeSeries();
+  @Get('series')
+  async _totalSeries(@Query('type') type = 'global', @Query('search') search = null): Promise<any> {
+    return this.covidService.getDetailsTimeSeries(type, search);
   }
 
 }

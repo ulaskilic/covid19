@@ -1,11 +1,11 @@
 import { restClient } from '../Utils/client'
 
+const queryParam = (q = {}) => {
+  return Object.keys(q).length ? `?${Object.keys(q).map(k => `${k}=${q[k]}`).join('&')}` : ''
+};
 const api = {
-  total: async () => restClient.get(`covid/total`),
-  totalTimeSeries: async () => restClient.get(`covid/totalTimeSeries`),
-  totalRegion: async () => restClient.get(`covid/totalRegion`),
-  totalRegionTimeSeries: async () => restClient.get(`covid/totalRegionTimeSeries`),
-  countryList: async () => restClient.get(`covid/countryList`)
+  details: async (query = {}) => restClient.get(`covid${queryParam(query)}`),
+  detailsTimeSeries: async (query = {}) => restClient.get(`covid/series${queryParam(query)}`),
 };
 
 export { api }

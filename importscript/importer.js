@@ -4,6 +4,10 @@ const db = mongoose.connection;
 const fs = require('fs').promises;
 const _ = require('lodash');
 const moment = require('moment');
+const csvtojson = require('csvtojson');
+const apisauce = require('apisauce');
+
+const api = apisauce.create({headers: {}});
 
 const covid19Schema = new mongoose.Schema({
     timestamp: Date,
@@ -32,42 +36,70 @@ const Covid19 = mongoose.model('Covid19', covid19Schema);
 
 async function run() {
     await connectMongo();
-    await importPrevious()
+    await importWHOStats()
 }
 
-async function importPrevious() {
-    const confirmeds = JSON.parse(await fs.readFile('./confirmed.json'));
-    const deaths = JSON.parse(await fs.readFile('./death.json'));
-    const cureds = JSON.parse(await fs.readFile('./cured.json'));
-    const countries = JSON.parse(await fs.readFile('./countries.json'));
-    const mapping = JSON.parse(await fs.readFile('./mapping.json'));
+async function importWHOStats() {
+    const confirmedsCSV = await api.get("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Confirmed.csv");
+    const deathsCSV = await api.get("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Deaths.csv");
+    const recoveredCSV = await api.get("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Recovered.csv");
+    if(!confirmedsCSV.ok || !deathsCSV.ok || !recoveredCSV.ok) {
+        console.log(`Request error!`, confirmedsCSV.ok, deathsCSV.ok, recoveredCSV.ok);
+        process.exit(0);
+    }
+    const mapping = await csvtojson({checkType: true}).fromFile('./store/map.csv');
+    const confirmeds = await csvtojson({checkType: true}).fromString(confirmedsCSV.data);
+    const deaths = await csvtojson({checkType: true}).fromString(deathsCSV.data);
+    const cureds = await csvtojson({checkType: true}).fromString(recoveredCSV.data);
+    const countries = JSON.parse(await fs.readFile('./store/countries.json'));
 
-    const days = ['1/22/20', '1/23/20', '1/24/20', '1/25/20', '1/26/20', '1/27/20', '1/28/20', '1/29/20', '1/30/20',
-        '1/31/20', '2/1/20', '2/2/20', '2/3/20', '2/4/20', '2/5/20', '2/6/20', '2/7/20', '2/8/20', '2/9/20', '2/10/20',
-        '2/11/20', '2/12/20', '2/13/20', '2/14/20', '2/15/20', '2/16/20', '2/17/20', '2/18/20', '2/19/20', '2/20/20',
-        '2/21/20', '2/22/20', '2/23/20', '2/24/20', '2/25/20', '2/26/20', '2/27/20', '2/28/20', '2/29/20', '3/1/20',
-        '3/2/20', '3/3/20', '3/4/20', '3/5/20', '3/6/20', '3/7/20', '3/8/20', '3/9/20', '3/10/20', '3/11/20', '3/12/20',
-        '3/13/20', '3/14/20', '3/15/20'];
+    const days = Object.keys(confirmeds[0]).slice(4);
 
-    for (const day of days) {
-        moment.utc(day, 'M/D/YY').valueOf();
-        const entries = {};
-        for (const item of confirmeds) {
+
+    for(const day of days) {
+        const entities = {};
+        console.log(`---------------------------------`);
+        for(const item of confirmeds) {
+            item.country = item['Country/Region'];
+            item.state = item['Province/State'];
             const confirmed = item;
-            const death = _.find(deaths, {state: item.state, country: item.country});
-            const cured = _.find(cureds, {state: item.state, country: item.country});
-            if(!entries.hasOwnProperty(confirmed.country)) {
-                const mapped = _.find(mapping, {who: item.country});
-                if(!mapped) {
+            const death = _.find(deaths, {'Province/State': item.state, 'Country/Region': item.country});
+            const cured = _.find(cureds, {'Province/State': item.state, 'Country/Region': item.country});
+            const manualMapped = _.find(mapping, {who: `${item.country}|${item.state}`});
+            if(manualMapped) {
+                const country = _.find(countries, {cca2: manualMapped.mappingCountry});
+                if(!country) {
+                    console.log(`Manuel mapped country not found! ${item.country} - ${item.state}`);
+                    continue;
+                }
+                entities[`${item.state}-${item.country}`] = {
+                    timestamp: moment.utc(day, 'M/D/YY').valueOf(),
+                    day: moment.utc(day, 'M/D/YY').format('YYYY/MM/DD'),
+                    type: 'country',
+                    name: country.name.common,
+                    code: country.cca2,
+                    location: {type: 'Point', coordinates: country.latlng},
+                    region: country.region,
+                    subRegion: country.subregion,
+                    confirmed: confirmed[day],
+                    death: death[day],
+                    cured: cured[day],
+                };
+                continue;
+            }
+
+            if(!entities.hasOwnProperty(item.country)) {
+                const autoMapped = _.find(mapping, {who: item.country});
+                if(!autoMapped) {
                     console.log(`Mapping not found! ${item.country}`);
                     continue;
                 }
-                const country = _.find(countries, {cca2: mapped.mappingCountry});
+                const country = _.find(countries, {cca2: autoMapped.mappingCountry});
                 if(!country) {
                     console.log(`Country code not found! ${item.country}`);
                     continue;
                 }
-                entries[item.country] = {
+                entities[item.country] = {
                     timestamp: moment.utc(day, 'M/D/YY').valueOf(),
                     day: moment.utc(day, 'M/D/YY').format('YYYY/MM/DD'),
                     type: 'country',
@@ -81,17 +113,19 @@ async function importPrevious() {
                     cured: 0,
                 }
             }
-            entries[item.country].confirmed += confirmed[day];
-            entries[item.country].death += death[day];
-            entries[item.country].cured += cured[day];
+
+            entities[item.country].confirmed += confirmed[day];
+            entities[item.country].death += death[day];
+            entities[item.country].cured += cured[day];
         }
 
-        for (const entryKey of Object.keys(entries)) {
-            const _covid19 = new Covid19(entries[entryKey]);
-            await _covid19.save();
+        for (const entryKey of Object.keys(entities)) {
+            await Covid19.updateOne(
+                {code: entities[entryKey].code, day: entities[entryKey].day},
+                {...entities[entryKey]},
+                {upsert: true});
         }
     }
-    console.log('done');
 }
 
 run();
