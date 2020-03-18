@@ -8,10 +8,12 @@ import React from "react";
 import {makeStyles} from "@material-ui/core/styles";
 import {Link as RouterLink} from 'react-router-dom';
 import withStore from "../Contexts/GlobalStore/withStore";
+import {useTranslation} from "react-i18next";
 
 const Header = props => {
     const classes = useStyles();
     const {store, setStore} = props.context;
+    const {t, i18n} = useTranslation();
 
     return (
         <AppBar position="sticky" className={classes.root}>
@@ -21,10 +23,10 @@ const Header = props => {
                     <Icon>home</Icon>
                 </IconButton>
                 <Typography variant="h6" className={classes.title}>
-                    Covid-19 Stats
+                    {t('title')}
                 </Typography>
                 <Typography variant="caption">
-                    {store.lastUpdated && <span>Last updated: <Moment fromNow>{store.lastUpdated}</Moment></span>}
+                    {store.lastUpdated && <span>{t('lastUpdated')}<Moment fromNow locale={i18n.language}>{store.lastUpdated}</Moment></span>}
                 </Typography>
             </Toolbar>
         </AppBar>

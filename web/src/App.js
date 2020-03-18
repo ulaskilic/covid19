@@ -6,6 +6,7 @@ import {BrowserRouter} from "react-router-dom";
 import Routes from "./Routes";
 import {SnackbarProvider} from "notistack";
 import Initiator from "./Components/Initiator";
+import 'moment/locale/tr'
 
 const defaultTheme = createMuiTheme({
     // palette: {

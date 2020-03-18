@@ -9,6 +9,7 @@ import {Events} from "../../Services/Events";
 import PieChart from "../../Components/PieChart";
 import LineChart from "../../Components/LineChart";
 import {useParams} from 'react-router-dom';
+import {useTranslation} from "react-i18next";
 const useStyles = makeStyles(theme => ({
     shuffleButton: {
         position: 'fixed',
@@ -24,7 +25,7 @@ const Country = props => {
     const classes = useStyles();
     const {store, setStore} = props.context;
     const {countryName} = useParams();
-
+    const {t, i18n} = useTranslation();
     useEffect(() => {
 
     }, []);
@@ -46,11 +47,11 @@ const Country = props => {
                 </Grid>
                 <Grid item lg={4} md={4} sm={12} xs={12}>
                     <Card>
-                        <CardHeader title="Overall"/>
+                        <CardHeader title={`${countryName} ${t('overall')}`}/>
                         <CardContent>
                             {/*<OverallPieChart/>*/}
                             <PieChart
-                                labels={['Active Case', 'Death', 'Recovered']}
+                              labels={[t('activeCase'), t('death'), t('recovered')]}
                                 colors={['#008ffb', '#ff4560', '#00e396']}
                                 dataFields={['active', 'death', 'cured']}
                                 query={{type: 'country', search: countryName}}
@@ -64,10 +65,10 @@ const Country = props => {
                         query={{type: 'country', search: countryName}}
                         xAxisLabelField='day'
                         series={[
-                            {key: 'Affected', value: 'confirmed'},
-                            {key: 'Active Case', value: 'active'},
-                            {key: 'Recovered', value: 'cured'},
-                            {key: 'Death', value: 'death'}
+                            {key: t('affected'), value: 'confirmed'},
+                            {key: t('activeCase'), value: 'active'},
+                            {key: t('recovered'), value: 'cured'},
+                            {key: t('death'), value: 'death'}
                         ]}
                         colors={['#008ffb', '#feb019', '#00e396', '#ff4560']}
                     />

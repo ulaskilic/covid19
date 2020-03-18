@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './Assets/scss/app.scss';
 import App from './App';
+import './Utils/Lang';
 import * as serviceWorker from './serviceWorker';
 import {reducer, initialState} from "./Contexts/GlobalStore/Reducer";
 import {Provider as GlobalStoreProvider} from "./Contexts/GlobalStore/Provider";

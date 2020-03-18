@@ -3,10 +3,12 @@ import MaterialTable from "material-table";
 import {Events} from "../../Services/Events";
 import withStore from "../../Contexts/GlobalStore/withStore";
 import {useHistory} from 'react-router-dom';
+import {useTranslation} from "react-i18next";
 
 const CountryList = props => {
     const [data, setData] = useState([]);
     const history = useHistory();
+    const {t, i18n} = useTranslation();
     useEffect(() => {
         fetchData();
         const eventId = Events.on('refresh', () => {
@@ -28,30 +30,30 @@ const CountryList = props => {
     };
 
     const columns = [
-        {title: 'Country', field: 'country'},
-        {title: 'Country Code', field: 'code'},
-        {title: 'Region', field: 'region'},
+        {title: t('countryList.country'), field: 'country'},
+        {title: t('countryList.countryCode'), field: 'code'},
+        {title: t('countryList.region'), field: 'region'},
         {
-            title: 'Affected', field: 'confirmed',
+            title: t('affected'), field: 'confirmed',
             cellStyle: {
                 backgroundColor: '#e2edfa',
             }
         },
         {
-            title: 'Active Cases', field: 'activeCases',
+            title: t('activeCase'), field: 'activeCases',
             defaultSort: 'desc',
             cellStyle: {
                 backgroundColor: '#FBE4BB',
             }
         },
         {
-            title: 'Recovered', field: 'cured',
+            title: t('recovered'), field: 'cured',
             cellStyle: {
                 backgroundColor: '#e4f4cd',
             }
         },
         {
-            title: 'Death', field: 'death',
+            title: t('death'), field: 'death',
             cellStyle: {
                 backgroundColor: '#ffcac4',
             }
@@ -60,7 +62,7 @@ const CountryList = props => {
 
     return (
         <div style={{marginBottom: '64px'}}>
-            <MaterialTable options={{pageSize: 20}} columns={columns} data={data} title="Country list" onRowClick={(event, row) => {
+            <MaterialTable options={{pageSize: 20}} columns={columns} data={data} title={t('countryList.title')} onRowClick={(event, row) => {
                 history.push(`/country/${row.country}`)
             }}/>
         </div>

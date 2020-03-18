@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import {Grid, Paper, makeStyles, Typography} from "@material-ui/core";
 import {Events} from "../Services/Events";
 import withStore from "../Contexts/GlobalStore/withStore";
+import {useTranslation} from "react-i18next";
 
 const useStyles = makeStyles(theme => ({
     margin: {
@@ -16,6 +17,7 @@ const HeaderCards = props => {
     const classes = useStyles();
     const {store, setStore} = props.context;
     const [data, setData] = useState({});
+    const {t, i18n} = useTranslation();
 
     useEffect(() => {
         fetchData();
@@ -39,25 +41,25 @@ const HeaderCards = props => {
         <Grid container spacing={2}>
             <Grid item lg={3} md={6} sm={12} xs={12}>
                 <Paper elevation={3} className={classes.padding} style={{backgroundColor: '#008ffb', color: 'white'}}>
-                    <Typography variant="h6">Affected: {data.confirmed}</Typography>
+                    <Typography variant="h6">{t('affected')}: {data.confirmed}</Typography>
                 </Paper>
             </Grid>
 
             <Grid item lg={3} md={6} sm={12} xs={12}>
                 <Paper elevation={3} className={classes.padding} style={{backgroundColor: '#feb019', color: 'white'}}>
-                    <Typography variant="h6">Active Case: {data.active}</Typography>
+                    <Typography variant="h6">{t('activeCase')}: {data.active}</Typography>
                 </Paper>
             </Grid>
 
             <Grid item lg={3} md={6} sm={12} xs={12}>
                 <Paper elevation={3} className={classes.padding} style={{backgroundColor: '#00e396', color: 'white'}}>
-                    <Typography variant="h6">Recovered: {data.cured}</Typography>
+                    <Typography variant="h6">{t('recovered')}: {data.cured}</Typography>
                 </Paper>
             </Grid>
 
             <Grid item lg={3} md={6} sm={12} xs={12}>
                 <Paper elevation={3} className={classes.padding} style={{backgroundColor: '#ff4560', color: 'white'}}>
-                    <Typography variant="h6">Death: {data.death}</Typography>
+                    <Typography variant="h6">{t('death')}: {data.death}</Typography>
                 </Paper>
             </Grid>
         </Grid>
