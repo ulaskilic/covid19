@@ -114,9 +114,9 @@ async function importWHOStats() {
                 }
             }
 
-            entities[item.country].confirmed += confirmed[day];
-            entities[item.country].death += death[day];
-            entities[item.country].cured += cured[day];
+            entities[item.country].confirmed += confirmed[day] ? confirmed[day] : 0;
+            entities[item.country].death += death[day] ? death[day] : 0;
+            entities[item.country].cured += cured[day] ? cured[day] : 0;
         }
 
         for (const entryKey of Object.keys(entities)) {
