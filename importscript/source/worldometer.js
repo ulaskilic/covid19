@@ -50,7 +50,7 @@ const sync = async () => {
                 const $ = res.$;
                 const list = [];
 
-                $('#main_table_countries tbody tr').each(function (index, elem) {
+                $('#main_table_countries_today tbody tr').each(function (index, elem) {
                     const confirmed = isNaN(parseInt($(elem).children('td').eq(1).text().trim().replace(',', ''))) ? 0 :
                         parseInt($(elem).children('td').eq(1).text().trim().replace(',', ''));
 
