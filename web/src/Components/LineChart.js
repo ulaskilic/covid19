@@ -4,8 +4,10 @@ import {Events} from "../Services/Events";
 import withStore from "../Contexts/GlobalStore/withStore";
 import * as _ from 'lodash';
 import moment from "moment";
+import {useTranslation} from "react-i18next";
 
 const LineChart = props => {
+    const {t, i18n} = useTranslation();
     const {
         api,
         xAxisLabels = [],
@@ -40,7 +42,7 @@ const LineChart = props => {
                     categories: [],
                     labels: {
                         formatter: (val, time, index) => {
-                            return moment(new Date(time)).format('MMM DD')
+                            return moment(new Date(time)).locale(i18n.language).format('MMM DD')
                         }
                     }
                 },
