@@ -104,7 +104,7 @@ const MapView = props => {
             <Map center={[41.026479, 28.996380]} zoom={3} className={classes.mapContainer}>
                 <TileLayer
                     attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-                    url="https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}.png"
+                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
                 {data.data.map(d => {
                     return (
