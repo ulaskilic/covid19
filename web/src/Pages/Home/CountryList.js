@@ -4,6 +4,8 @@ import {Events} from "../../Services/Events";
 import withStore from "../../Contexts/GlobalStore/withStore";
 import {useHistory} from 'react-router-dom';
 import {useTranslation} from "react-i18next";
+import {Link} from "@material-ui/core";
+import {Link as RouterLink} from "react-router-dom";
 
 const CountryList = props => {
     const [data, setData] = useState([]);
@@ -30,7 +32,10 @@ const CountryList = props => {
     };
 
     const columns = [
-        {title: t('countryList.country'), field: 'country'},
+        {
+            title: t('countryList.country'), field: 'country',
+            render: (val) => (<Link component={RouterLink} to={`/country/${val.country}`}>{val.country}</Link>)
+        },
         {title: t('countryList.countryCode'), field: 'code'},
         {title: t('countryList.region'), field: 'region'},
         {

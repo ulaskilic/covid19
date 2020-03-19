@@ -10,6 +10,7 @@ import PieChart from "../../Components/PieChart";
 import LineChart from "../../Components/LineChart";
 import {useParams} from 'react-router-dom';
 import {useTranslation} from "react-i18next";
+import {Helmet} from 'react-helmet';
 const useStyles = makeStyles(theme => ({
     shuffleButton: {
         position: 'fixed',
@@ -36,10 +37,17 @@ const Country = props => {
 
     return (
         <Container style={{marginTop: '24px'}}>
+            <Helmet>
+                <meta
+                    name="description"
+                    content={`Corona (Covid19) virus latest stats for ${countryName}`}
+                />
+                <title>{countryName} Corona (Covid19) Stats</title>
+            </Helmet>
             <Grid container spacing={2}>
                 <Grid item lg={12} md={12} sm={12} xs={12}>
                     <Paper elevation={3} className={classes.padding}>
-                        <Typography variant="h6" align="center">{countryName}</Typography>
+                        <Typography variant="h6" component="h1" align="center">{countryName}</Typography>
                     </Paper>
                 </Grid>
                 <Grid item lg={12} md={12} sm={12} xs={12}>
