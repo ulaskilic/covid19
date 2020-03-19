@@ -58,7 +58,7 @@ const HeaderCards = props => {
             </Grid>
 
             <Grid item lg={3} md={6} sm={12} xs={12}>
-                <Paper elevation={3} className={classes.padding} style={{backgroundColor: '#ff4560', color: 'white'}}>
+                <Paper elevation={3} className={classes.padding} style={{backgroundColor: '#3c3c3c', color: 'white'}}>
                     <Typography variant="h6">{t('death')}: {data.death}</Typography>
                 </Paper>
             </Grid>

@@ -3,6 +3,7 @@ import Chart from "react-apexcharts";
 import {Events} from "../Services/Events";
 import withStore from "../Contexts/GlobalStore/withStore";
 import * as _ from 'lodash';
+import moment from "moment";
 
 const LineChart = props => {
     const {
@@ -35,8 +36,13 @@ const LineChart = props => {
                     enabled: false
                 },
                 xaxis: {
-                    type: 'catalog',
+                    type: 'datetime',
                     categories: [],
+                    labels: {
+                        formatter: (val, time, index) => {
+                            return moment(new Date(time)).format('MMM DD')
+                        }
+                    }
                 },
                 stroke: {
                     width: 3,

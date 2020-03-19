@@ -52,7 +52,7 @@ const Country = props => {
                             {/*<OverallPieChart/>*/}
                             <PieChart
                               labels={[t('activeCase'), t('death'), t('recovered')]}
-                                colors={['#008ffb', '#ff4560', '#00e396']}
+                                colors={['#feb019', '#3c3c3c', '#00e396']}
                                 dataFields={['active', 'death', 'cured']}
                                 query={{type: 'country', search: countryName}}
                             />
@@ -70,7 +70,7 @@ const Country = props => {
                             {key: t('recovered'), value: 'cured'},
                             {key: t('death'), value: 'death'}
                         ]}
-                        colors={['#008ffb', '#feb019', '#00e396', '#ff4560']}
+                        colors={['#008ffb', '#feb019', '#00e396', '#3c3c3c']}
                     />
                 </Grid>
             </Grid>

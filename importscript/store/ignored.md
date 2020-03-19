@@ -1,5 +1,6 @@
 Jersey -> mapped to ChannelIsland
 Guernsey -> Mapped to ChannelIsland
+The Gambia -> Mapped to Gambia, The
 Guam -> Getting under the US
 Puerto Rico -> Getting under the US
 Mayotte -> Getting under the France

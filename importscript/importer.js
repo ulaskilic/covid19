@@ -67,6 +67,7 @@ async function importWHOStats() {
             const cured = _.find(cureds, {'Province/State': item.state, 'Country/Region': item.country});
             const manualMapped = _.find(mapping, {who: `${item.country}|${item.state}`});
             if(manualMapped) {
+                console.log(`Manual mapped -> ${item.country} - ${item.state}`);
                 const country = _.find(countries, {cca2: manualMapped.mappingCountry});
                 if(!country) {
                     console.log(`Manuel mapped country not found! ${item.country} - ${item.state}`);

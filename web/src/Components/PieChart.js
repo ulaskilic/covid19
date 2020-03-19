@@ -38,7 +38,22 @@ const PieChart = props => {
                             }
                         }
                     }
-                ]
+                ],
+                stroke: {
+                    show: false
+                },
+                plotOptions: {
+                    pie: {
+                        donut: {
+                            labels: {
+                                show: true,
+                                total: {
+                                    show: true
+                                }
+                            }
+                        }
+                    }
+                }
             };
             options.labels = labelField ? _.map(data, labelField) : labels;
             if(colors.length) options.colors = colors;
@@ -54,7 +69,7 @@ const PieChart = props => {
 
     return (
         <div>
-            <Chart options={options} series={chartData} type='pie'/>
+            <Chart options={options} series={chartData} type='donut'/>
         </div>
     )
 }
