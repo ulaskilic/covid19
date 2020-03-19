@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import MaterialTable from "material-table";
-import {Events} from "../../Services/Events";
-import withStore from "../../Contexts/GlobalStore/withStore";
+import {Events} from "../Services/Events";
+import withStore from "../Contexts/GlobalStore/withStore";
 import {useHistory} from 'react-router-dom';
 import {useTranslation} from "react-i18next";
 import {Link} from "@material-ui/core";
@@ -24,10 +24,7 @@ const CountryList = props => {
     const fetchData = async () => {
         const {data, ok} = await props.api.details({type: 'country'});
         if(ok) {
-            setData(data.map(i => {
-                i.activeCases = i.confirmed - (i.death + i.cured);
-                return i;
-            }));
+            setData(data);
         }
     };
 
@@ -45,7 +42,7 @@ const CountryList = props => {
             }
         },
         {
-            title: t('activeCase'), field: 'activeCases',
+            title: t('activeCase'), field: 'active',
             defaultSort: 'desc',
             cellStyle: {
                 backgroundColor: '#FBE4BB',

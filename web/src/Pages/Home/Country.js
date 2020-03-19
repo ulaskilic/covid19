@@ -3,7 +3,7 @@ import React, {useEffect} from "react";
 import {makeStyles} from "@material-ui/core/styles";
 import withStore from "../../Contexts/GlobalStore/withStore";
 
-import CountryList from "./CountryList";
+import CountryList from "../../Components/CountryList";
 import HeaderCards from "../../Components/HeaderCards";
 import {Events} from "../../Services/Events";
 import PieChart from "../../Components/PieChart";
@@ -27,8 +27,9 @@ const Country = props => {
     const {store, setStore} = props.context;
     const {countryName} = useParams();
     const {t, i18n} = useTranslation();
-    useEffect(() => {
 
+    useEffect(() => {
+        setStore({type: 'appBar', payload: `${countryName} Stats`})
     }, []);
 
     const refreshData = () => {

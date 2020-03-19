@@ -66,6 +66,7 @@ export class CovidService {
           'confirmed': { '$sum': '$confirmed' },
           'death': { '$sum': '$death' },
           'cured': { '$sum': '$cured' },
+          'location': {'$first': '$location'}
         };
         searchField = 'name';
         break;

@@ -23,11 +23,12 @@ const Header = props => {
                     <Icon>home</Icon>
                 </IconButton>
                 <Typography variant="h6" className={classes.title}>
-                    {t('title')}
+                    {store.appBar}
                 </Typography>
-                <Typography variant="caption">
-                    {store.lastUpdated && <span>{t('lastUpdated')}<Moment fromNow locale={i18n.language}>{store.lastUpdated}</Moment></span>}
-                </Typography>
+                <IconButton edge="start" color="inherit" aria-label="menu"
+                            component={RouterLink} to="/map">
+                    <Icon>map</Icon>
+                </IconButton>
             </Toolbar>
         </AppBar>
     )

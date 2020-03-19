@@ -1,7 +1,7 @@
 import apisauce from 'apisauce'
 
 const client = apisauce.create({
-  baseURL: process.env.REACT_APP_API_URL || 'http://192.168.1.150:5000/api/v1',
+  baseURL: 'http://192.168.1.150:5000/api/v1',
   headers: {
     'Content-Type': 'application/json'
   }

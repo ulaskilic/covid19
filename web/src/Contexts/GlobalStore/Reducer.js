@@ -1,4 +1,5 @@
 const initialState = {
+    appBar: 'Covid19 Stats',
     loading: false,
     lastUpdated: null,
 };

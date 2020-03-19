@@ -2,12 +2,13 @@ import {Card, CardContent, CardHeader, Container, Fab, Grid, Icon} from "@materi
 import React, {useEffect} from "react";
 import {makeStyles} from "@material-ui/core/styles";
 import withStore from "../../Contexts/GlobalStore/withStore";
-import CountryList from "./CountryList";
+import CountryList from "../../Components/CountryList";
 import HeaderCards from "../../Components/HeaderCards";
 import {Events} from "../../Services/Events";
 import PieChart from "../../Components/PieChart";
 import LineChart from "../../Components/LineChart";
 import {useTranslation} from "react-i18next";
+import {Helmet} from 'react-helmet';
 
 const useStyles = makeStyles(theme => ({
     shuffleButton: {
@@ -22,7 +23,7 @@ const Home = props => {
     const {store, setStore} = props.context;
     const {t, i18n} = useTranslation();
     useEffect(() => {
-
+        setStore({type: 'appBar', payload: t('title')})
     }, []);
 
     const refreshData = () => {
@@ -31,6 +32,13 @@ const Home = props => {
 
     return (
         <Container style={{marginTop: '24px'}}>
+            <Helmet>
+                <meta
+                    name="description"
+                    content={`Corona (Covid19) virus latest stats for worldwide`}
+                />
+                <title>Corona (Covid19) Stats</title>
+            </Helmet>
             <Grid container spacing={2}>
                 <Grid item lg={12} md={12} sm={12} xs={12}>
                     <HeaderCards/>
