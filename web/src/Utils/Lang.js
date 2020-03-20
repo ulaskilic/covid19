@@ -12,6 +12,7 @@ const resource =  {
             death: 'Death',
             overall: 'Overall',
             regionalActiveCases: 'Regional Active Cases',
+            map: 'map',
             countryList: {
                 title: 'Country List',
                 country: 'Country',
@@ -30,6 +31,7 @@ const resource =  {
             death: 'Ölen',
             overall: 'Genel',
             regionalActiveCases: 'Bölgesel Aktif Vakalar',
+            map: 'Harita',
             countryList: {
                 title: 'Ülke Listesi',
                 country: 'Ülke',

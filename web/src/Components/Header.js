@@ -1,8 +1,4 @@
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
-import IconButton from "@material-ui/core/IconButton";
-import Icon from "@material-ui/core/Icon";
+import {AppBar, Toolbar, Typography, IconButton, Icon, Button} from '@material-ui/core';
 import Moment from "react-moment";
 import React from "react";
 import {makeStyles} from "@material-ui/core/styles";
@@ -25,10 +21,10 @@ const Header = props => {
                 <Typography variant="h6" className={classes.title}>
                     {store.appBar}
                 </Typography>
-                <IconButton edge="start" color="inherit" aria-label="menu"
-                            component={RouterLink} to="/map">
-                    <Icon>map</Icon>
-                </IconButton>
+                <Button edge="start" color="inherit" aria-label="menu"
+                            component={RouterLink} to="/map" endIcon={<Icon>map</Icon>}>
+                    {t('map')}
+                </Button>
             </Toolbar>
         </AppBar>
     )
