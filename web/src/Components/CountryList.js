@@ -33,32 +33,36 @@ const CountryList = props => {
             title: t('countryList.country'), field: 'country',
             render: (val) => (<Link component={RouterLink} to={`/country/${val.country}`}>{val.country}</Link>)
         },
-        {title: t('countryList.countryCode'), field: 'code'},
-        {title: t('countryList.region'), field: 'region'},
+        {
+            title: t('countryList.region'), field: 'region'
+        },
         {
             title: t('affected'), field: 'confirmed',
             cellStyle: {
                 backgroundColor: '#e2edfa',
-            }
+            },
         },
         {
             title: t('activeCase'), field: 'active',
             defaultSort: 'desc',
             cellStyle: {
                 backgroundColor: '#FBE4BB',
-            }
+            },
+            render: val => (<span>{val.active} <span style={{fontSize: '0.8em'}}>({((val.active * 100) / val.confirmed).toFixed(2)}%)</span></span>)
         },
         {
             title: t('recovered'), field: 'cured',
             cellStyle: {
                 backgroundColor: '#e4f4cd',
-            }
+            },
+            render: val => (<span>{val.cured} <span style={{fontSize: '0.8em'}}>({((val.cured * 100) / val.confirmed).toFixed(2)}%)</span></span>)
         },
         {
             title: t('death'), field: 'death',
             cellStyle: {
                 backgroundColor: '#ffcac4',
-            }
+            },
+            render: val => (<span>{val.death} <span style={{fontSize: '0.8em'}}>({((val.death * 100) / val.confirmed).toFixed(2)}%)</span></span>)
         },
     ];
 
