@@ -12,6 +12,7 @@ import {useParams} from 'react-router-dom';
 import {useTranslation} from "react-i18next";
 import {Helmet} from 'react-helmet';
 import Moment from "react-moment";
+import HistoryList from "../../Components/HistoryList";
 const useStyles = makeStyles(theme => ({
     shuffleButton: {
         position: 'fixed',
@@ -85,6 +86,9 @@ const Country = props => {
                         ]}
                         colors={['#008ffb', '#feb019', '#00e396', '#3c3c3c']}
                     />
+                </Grid>
+                <Grid item lg={12} md={12} sm={12} xs={12}>
+                    <HistoryList countryName={countryName}/>
                 </Grid>
             </Grid>
 

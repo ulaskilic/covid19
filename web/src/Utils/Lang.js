@@ -14,6 +14,8 @@ const resource =  {
             regionalActiveCases: 'Regional Active Cases',
             map: 'map',
             countryList: {
+                history: 'History',
+                day: 'Day',
                 title: 'Country List',
                 country: 'Country',
                 countryCode: 'Country Code',
@@ -33,6 +35,8 @@ const resource =  {
             regionalActiveCases: 'Bölgesel Aktif Vakalar',
             map: 'Harita',
             countryList: {
+                history: 'Geçmiş',
+                day: 'Gün',
                 title: 'Ülke Listesi',
                 country: 'Ülke',
                 countryCode: 'Ülke Kodu',
