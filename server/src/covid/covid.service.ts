@@ -11,7 +11,8 @@ export class CovidService {
   }
 
   async getDetails(type: string, country: string = null): Promise<any> {
-    const date = moment.utc(await this.getLatestDate());
+    const latestDate = await this.getLatestDate();
+    const date = moment.utc(new Date(latestDate.day));
     const aggregationQuery = this.prepareAggregation(type, country,
       [date.format('YYYY/MM/DD')]);
     const data = await this.covidModel.aggregate(aggregationQuery);
@@ -53,7 +54,7 @@ export class CovidService {
   }
 
   private async getLatestDate() {
-    return this.covidModel.findOne({}, { day: 1 }).sort({ day: -1 });
+    return this.covidModel.findOne({}, { day: 1 }).sort({day: -1});
   }
 
   private prepareAggregation(type: string, search: string, days: string[]): object {
