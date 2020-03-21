@@ -2,6 +2,8 @@ import { BadRequestException, Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import * as moment from 'moment';
+import { Moment } from 'moment';
+import * as _ from 'lodash';
 
 @Injectable()
 export class CovidService {
@@ -10,10 +12,38 @@ export class CovidService {
 
   async getDetails(type: string, country: string = null): Promise<any> {
     const date = moment.utc(await this.getLatestDate());
-    const aggregationQuery = this.prepareAggregation(type, country, [
-      date.format('YYYY/MM/DD')]);
+    const aggregationQuery = this.prepareAggregation(type, country,
+      [date.format('YYYY/MM/DD')]);
     const data = await this.covidModel.aggregate(aggregationQuery);
-    return data.length == 1 ? data[0] : data;
+
+    const oldAggregationQuery = this.prepareAggregation(type, country,
+      [date.subtract(1, 'days').format('YYYY/MM/DD')]);
+    const oldData = await this.covidModel.aggregate(oldAggregationQuery);
+
+    const response = this.mergeOldAndNew(oldData, data, date);
+    return response.length == 1 ? response[0] : response;
+  }
+
+  mergeOldAndNew(oldData, newData, date: Moment): any {
+    return _.map(newData, data => {
+      const prevDay = _.find(oldData, { _id: { ...data._id, day: date.format('YYYY/MM/DD') } });
+      if (prevDay) {
+        data.prev = {
+          confirmed: data.confirmed - prevDay.confirmed,
+          death: data.death - prevDay.death,
+          cured: data.cured - prevDay.cured,
+          active: data.active - prevDay.active,
+        };
+      } else {
+        data.prev = {
+          confirmed: 0,
+          death: 0,
+          cured: 0,
+          active: 0,
+        };
+      }
+      return data;
+    });
   }
 
   async getDetailsTimeSeries(type: string, country: string = null): Promise<any> {
@@ -66,7 +96,7 @@ export class CovidService {
           'confirmed': { '$sum': '$confirmed' },
           'death': { '$sum': '$death' },
           'cured': { '$sum': '$cured' },
-          'location': {'$first': '$location'}
+          'location': { '$first': '$location' },
         };
         searchField = 'name';
         break;

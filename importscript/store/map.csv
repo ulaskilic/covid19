@@ -65,7 +65,7 @@ Argentina,Argentina,AR
 Panama,Panama,PA
 Mexico,Mexico,MX
 Albania,Albania,AL
-Palestine,occupied Palestinian territory,PS
+Palestine,,PS
 Colombia,Colombia,CO
 Georgia,Georgia,GE
 Cyprus,Cyprus,CY
@@ -99,7 +99,7 @@ Martinique,Martinique,MQ
 Venezuela,Venezuela,VE
 Kazakhstan,Kazakhstan,KZ
 New Zealand,New Zealand,NZ
-French Guiana,French Guiana,GF
+French Guiana,France|French Guiana,GF
 Liechtenstein,Liechtenstein,LI
 Paraguay,Paraguay,PY
 Réunion,Reunion,RE
@@ -117,7 +117,7 @@ Ukraine,Ukraine,UA
 Burkina Faso,Burkina Faso,BF
 Channel Islands,United Kingdom|Channel Islands,X2
 French Polynesia,France|French Polynesia,PF
-Guadeloupe,Guadeloupe,GP
+Guadeloupe,France|Guadeloupe,GP
 Guam,US|Guam,GU
 Honduras,Honduras,HN
 Kenya,Kenya,KE
@@ -126,7 +126,7 @@ Monaco,Monaco,MC
 Nigeria,Nigeria,NG
 Aruba,Aruba,AW
 Cameroon,Cameroon,CM
-Curaçao,Curacao,CW
+Curaçao,Netherlands|Curacao,CW
 DRC,Congo (Kinshasa),CD
 Namibia,Namibia,NA
 Saint Lucia,Saint Lucia,LC
@@ -137,7 +137,7 @@ Nepal,Nepal,NP
 Antigua and Barbuda,Antigua and Barbuda,AG
 Bahamas,"Bahamas, The",BS
 Bhutan,Bhutan,BT
-Cayman Islands,Cayman Islands,KY
+Cayman Islands,United Kingdom|Cayman Islands,KY
 CAR,Central African Republic,CF
 Congo,Congo (Brazzaville),CG
 Equatorial Guinea,Equatorial Guinea,GQ
@@ -155,7 +155,7 @@ St. Vincent Grenadines,Saint Vincent and the Grenadines,VC
 Suriname,Suriname,SR
 Eswatini,Eswatini,SZ
 Togo,Togo,TG
-U.S. Virgin Islands,"US|Virgin Islands, U.S.",VI
+U.S. Virgin Islands,US|Virgin Islands,VI
 Uzbekistan,Uzbekistan,UZ
 Liberia,Liberia,LR
 Tanzania,Tanzania,TZ
@@ -167,19 +167,22 @@ Barbados,Barbados,BB
 Gambia,"Gambia, The",GM
 Montenegro,Montenegro,ME
 Kyrgyzstan,Kyrgyzstan,KG
-New Caledonia,,NC
+New Caledonia,France|New Caledonia,NC
 Zambia,Zambia,ZM
 Djibouti,Djibouti,DJ
 Montserrat,United Kingdom|Montserrat,MS
 Mauritius,Mauritius,MU
 Bermuda,United Kingdom|Bermuda,BM
-Sint Maarten,,SX
+Sint Maarten,Netherlands|Sint Maarten,SX
 El Salvador,El Salvador,SV
 Fiji,Fiji,FJ
 Nicaragua,Nicaragua,NI
 Chad,Chad,TD
-Niger,,NE
-Isle of Man,,IM
-Haiti,,HT
-Angola,,AO
-Cabo Verde,,CV
+Niger,Niger,NE
+Isle of Man,United Kingdom|Isle of Man,IM
+Haiti,Haiti,HT
+Angola,Angola,AO
+Cabo Verde,Cabo Verde,CV
+Zimbabwe,Zimbabwe,ZW
+Papua New Guinea,Papua New Guinea,PG
+Madagascar,Madagascar,MG

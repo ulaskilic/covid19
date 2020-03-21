@@ -16,7 +16,18 @@ const HeaderCards = props => {
     const {query = {}} = props;
     const classes = useStyles();
     const {store, setStore} = props.context;
-    const [data, setData] = useState({});
+    const [data, setData] = useState({
+        confirmed: 0,
+        cured: 0,
+        active: 0,
+        death:0,
+        prev: {
+            confirmed: 0,
+            cured: 0,
+            active: 0,
+            death:0,
+        }
+    });
     const {t, i18n} = useTranslation();
 
     useEffect(() => {
@@ -37,29 +48,33 @@ const HeaderCards = props => {
       }
     };
 
+    const cardValue = (type) => {
+        return `${data[type]} (${data.prev[type] <= 0 ? '' : '+'}${data.prev[type]})`
+    }
+
     return (
         <Grid container spacing={2}>
             <Grid item lg={3} md={6} sm={12} xs={12}>
                 <Paper elevation={3} className={classes.padding} style={{backgroundColor: '#008ffb', color: 'white'}}>
-                    <Typography variant="h6" component="h3">{t('affected')}: {data.confirmed}</Typography>
+                    <Typography variant="inherit" component="h3">{t('affected')}: {cardValue('confirmed')}</Typography>
                 </Paper>
             </Grid>
 
             <Grid item lg={3} md={6} sm={12} xs={12}>
                 <Paper elevation={3} className={classes.padding} style={{backgroundColor: '#feb019', color: 'white'}}>
-                    <Typography variant="h6" component="h3">{t('activeCase')}: {data.active}</Typography>
+                    <Typography variant="inherit" component="h3">{t('activeCase')}: {cardValue('active')}</Typography>
                 </Paper>
             </Grid>
 
             <Grid item lg={3} md={6} sm={12} xs={12}>
                 <Paper elevation={3} className={classes.padding} style={{backgroundColor: '#00e396', color: 'white'}}>
-                    <Typography variant="h6" component="h3">{t('recovered')}: {data.cured}</Typography>
+                    <Typography variant="inherit" component="h3">{t('recovered')}: {cardValue('cured')}</Typography>
                 </Paper>
             </Grid>
 
             <Grid item lg={3} md={6} sm={12} xs={12}>
                 <Paper elevation={3} className={classes.padding} style={{backgroundColor: '#3c3c3c', color: 'white'}}>
-                    <Typography variant="h6" component="h3">{t('death')}: {data.death}</Typography>
+                    <Typography variant="inherit" component="h3">{t('death')}: {cardValue('death')}</Typography>
                 </Paper>
             </Grid>
         </Grid>
