@@ -43,13 +43,18 @@ const HeaderCards = props => {
     const fetchData = async () => {
       const {data, ok} = await props.api.details(query);
       if(ok) {
-          setData(data);
-          setStore({type: 'lastUpdated', payload: data.lastUpdated})
+          if(data.confirmed) {
+              setData(data);
+              setStore({type: 'lastUpdated', payload: data.lastUpdated})
+          }
       }
     };
 
     const cardValue = (type) => {
-        return `${data[type]} (${data.prev[type] <= 0 ? '' : '+'}${data.prev[type]})`
+        if(data.prev) {
+            return `${data[type]} (${data.prev[type] <= 0 ? '' : '+'}${data.prev[type]})`
+        }
+        return `${data[type]} (0)`
     }
 
     return (

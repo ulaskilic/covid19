@@ -11,6 +11,7 @@ import LineChart from "../../Components/LineChart";
 import {useParams} from 'react-router-dom';
 import {useTranslation} from "react-i18next";
 import {Helmet} from 'react-helmet';
+import Moment from "react-moment";
 const useStyles = makeStyles(theme => ({
     shuffleButton: {
         position: 'fixed',
@@ -38,6 +39,9 @@ const Country = props => {
 
     return (
         <Container style={{marginTop: '24px'}}>
+            <p align="center" style={{marginTop: '-24px', padding: '6px'}}>
+                {t('lastUpdated')} {store.lastUpdated && <Moment fromNow locale={i18n.language}>{store.lastUpdated}</Moment>}
+            </p>
             <Helmet>
                 <meta
                     name="description"
