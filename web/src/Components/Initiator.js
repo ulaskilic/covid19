@@ -11,6 +11,7 @@ const Initiator = props => {
 
     useEffect(() => {
         window.gtag('config', 'UA-160830716-1',{'page_path': history.location.pathname})
+        window.scrollTo(0, 0)
     }, [history.location.pathname]);
 
     const init = async () => {
