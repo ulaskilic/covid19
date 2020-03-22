@@ -40,6 +40,7 @@ const HistoryList = props => {
         },
         {
             title: t('countryList.day'), field: 'day',
+            defaultSort: 'desc',
         },
         {
             title: t('affected'), field: 'confirmed',
@@ -49,7 +50,6 @@ const HistoryList = props => {
         },
         {
             title: t('activeCase'), field: 'active',
-            defaultSort: 'desc',
             cellStyle: {
                 backgroundColor: '#FBE4BB',
             },
