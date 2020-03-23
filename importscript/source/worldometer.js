@@ -32,6 +32,7 @@ const covid19Schema = new mongoose.Schema({
     confirmed: Number,
     death: Number,
     cured: Number,
+    isManual: {type: Boolean, default: false},
 });
 const Covid19 = mongoose.model('Covid19', covid19Schema);
 
@@ -103,11 +104,7 @@ const sync = async () => {
                         const find = await Covid19.findOne({name: item.name, day: item.day});
                         if (find) {
                             // Baş koymuşum türkiyemin yoluna :]
-                            if (find.code == 'TR') {
-                                find.confirmed = find.confirmed > item.confirmed ? find.confirmed : item.confirmed;
-                                find.death = find.death > item.death ? find.death : item.death;
-                                find.cured = find.cured > item.cured ? find.cured : item.cured;
-                            } else {
+                            if (!find.isManual) {
                                 find.confirmed = item.confirmed;
                                 find.death = item.death;
                                 find.cured = item.cured
