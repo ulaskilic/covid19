@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const connectMongo = require('./lib/mongoose');
-const worldometer = require('./source/newWorldometer');
+const worldometer = require('./source/worldometerNormalizer');
 
 
 async function run() {

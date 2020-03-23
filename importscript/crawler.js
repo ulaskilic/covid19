@@ -9,7 +9,7 @@ const md5 = require('crypto-js/md5');
 const c = new Crawler();
 const cron = require('node-cron');
 const csvtojson = require('csvtojson');
-const worldometer = require('./source/newWorldometer');
+const worldometer = require('./source/worldometer');
 
 
 async function run() {
