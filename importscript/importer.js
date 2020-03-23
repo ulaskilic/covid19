@@ -31,6 +31,7 @@ const covid19Schema = new mongoose.Schema({
     confirmed: Number,
     death: Number,
     cured: Number,
+    isManual: {type: Boolean, default: false},
 });
 const Covid19 = mongoose.model('Covid19', covid19Schema);
 

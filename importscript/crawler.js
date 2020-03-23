@@ -9,7 +9,7 @@ const md5 = require('crypto-js/md5');
 const c = new Crawler();
 const cron = require('node-cron');
 const csvtojson = require('csvtojson');
-const worldometer = require('./source/worldometer');
+const worldometer = require('./source/newWorldometer');
 
 
 async function run() {
@@ -19,7 +19,7 @@ async function run() {
 run();
 
 async function crawl() {
-    cron.schedule('*/5 * * * *', () => {
+    cron.schedule('*/10 * * * *', () => {
         worldometer().then(() => {}).catch(() => {
             console.log(`Something went wrong for worldometer!`);
         })

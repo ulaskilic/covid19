@@ -7,3 +7,5 @@ Mayotte -> Getting under the France
 Republic of Congo -> Already mapped with Congo (Brazzaville)
 The Bahamas -> Already mapped with "Bahamas, The"
 Capo Verde -> Already mapped with Cape Verde
+Timor-Leste -> Already mapped with East-Timor
+Kosovo ignored

@@ -102,7 +102,7 @@ New Zealand,New Zealand,NZ
 French Guiana,France|French Guiana,GF
 Liechtenstein,Liechtenstein,LI
 Paraguay,Paraguay,PY
-Réunion,Reunion,RE
+Réunion,France|Reunion,RE
 Ghana,Ghana,GH
 Turkey,Turkey,TR
 Uruguay,Uruguay,UY
@@ -124,7 +124,7 @@ Kenya,Kenya,KE
 Seychelles,Seychelles,SC
 Monaco,Monaco,MC
 Nigeria,Nigeria,NG
-Aruba,Aruba,AW
+Aruba,Netherlands|Aruba,AW
 Cameroon,Cameroon,CM
 Curaçao,Netherlands|Curacao,CW
 DRC,Congo (Kinshasa),CD
@@ -160,10 +160,9 @@ Uzbekistan,Uzbekistan,UZ
 Liberia,Liberia,LR
 Tanzania,Tanzania,TZ
 Somalia,Somalia,SO
-Greenland,Greenland,GL
+Greenland,Denmark|Greenland,GL
 Benin,Benin,BJ
 Barbados,Barbados,BB
-,Kosovo,XK
 Gambia,"Gambia, The",GM
 Montenegro,Montenegro,ME
 Kyrgyzstan,Kyrgyzstan,KG
@@ -189,3 +188,7 @@ Madagascar,Madagascar,MG
 Eritrea,Eritrea,ER
 Timor-Leste,East Timor,TL
 Uganda,Uganda,UG
+Syria,Syria,SY
+Mozambique,Mozambique,MZ
+Grenada,Grenada,GD
+Dominica,Dominica,DM
