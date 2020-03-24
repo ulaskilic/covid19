@@ -52,14 +52,14 @@ const generateReport = async () => {
         for (const groupCode of Object.keys(groups)) {
             const group = groups[groupCode];
             const csvWriter = createCsvWriter({
-                header: ['day', 'countryCode', 'countryName', 'lat', 'lon', 'confirmed', 'cured', 'death'],
+                header: ['day', 'countryCode', 'countryName', 'region', 'lat', 'lon', 'confirmed', 'cured', 'death'],
                 path: `/root/covid19-timeseries/report/country/${groupCode}.csv`
             });
             const records = [];
             for (const row of group) {
                 if(row.day === today)
                     continue;
-                records.push([row.day, row.code, row.name,
+                records.push([row.day, row.code, row.name, row.region,
                     row.location.coordinates[0], row.location.coordinates[1],
                     row.confirmed, row.death, row.cured]);
             }
@@ -73,7 +73,7 @@ const generateReport = async () => {
         for (const dayKey of Object.keys(days)) {
             const day = days[dayKey];
             const csvWriter = createCsvWriter({
-                header: ['day', 'countryCode', 'countryName', 'lat', 'lon', 'confirmed', 'cured', 'death'],
+                header: ['day', 'countryCode', 'countryName', 'region', 'lat', 'lon', 'confirmed', 'cured', 'death'],
                 path: `/root/covid19-timeseries/report/daily/${dayKey.replace(/\//gi,'-')}.csv`
             });
             if(dayKey === today)
@@ -82,7 +82,7 @@ const generateReport = async () => {
             for (const row of day) {
                 if(row.day === today)
                     continue;
-                records.push([row.day, row.code, row.name,
+                records.push([row.day, row.code, row.name, row.region,
                     row.location.coordinates[0], row.location.coordinates[1],
                     row.confirmed, row.death, row.cured]);
             }
@@ -93,14 +93,14 @@ const generateReport = async () => {
 
     async function rawReport() {
         const csvWriter = createCsvWriter({
-            header: ['day', 'countryCode', 'countryName', 'lat', 'lon', 'confirmed', 'cured', 'death'],
+            header: ['day', 'countryCode', 'countryName', 'region', 'lat', 'lon', 'confirmed', 'cured', 'death'],
             path: `/root/covid19-timeseries/report/raw/rawReport.csv`
         });
         const records = [];
         for (const row of allDatas) {
             if(row.day === today)
                 continue;
-            records.push([row.day, row.code, row.name,
+            records.push([row.day, row.code, row.name, row.region,
                 row.location.coordinates[0], row.location.coordinates[1],
                 row.confirmed, row.death, row.cured]);
         }
