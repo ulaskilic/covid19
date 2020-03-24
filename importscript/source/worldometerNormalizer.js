@@ -117,19 +117,28 @@ const sync = async () => {
                         }
 
                         // If values lower than old, update old
-                        await Covid19.updateMany({code: item.code, confirmed: {$gte: item.confirmed}},
+                        await Covid19.updateMany({
+                                code: item.code, confirmed: {$gte: item.confirmed},
+                                day: {$in: [moment.utc().subtract(1, "day").format('YYYY/MM/DD')]}
+                            },
                             {
                                 $set: {
                                     confirmed: item.confirmed,
                                 }
                             });
-                        await Covid19.updateMany({code: item.code, death: {$gte: item.death}},
+                        await Covid19.updateMany({
+                                code: item.code, death: {$gte: item.death},
+                                day: {$in: [moment.utc().subtract(1, "day").format('YYYY/MM/DD')]}
+                                },
                             {
                                 $set: {
                                     death: item.death,
                                 }
                             });
-                        await Covid19.updateMany({code: item.code, cured: {$gte: item.cured}},
+                        await Covid19.updateMany({
+                                code: item.code, cured: {$gte: item.cured},
+                                day: {$in: [moment.utc().subtract(1, "day").format('YYYY/MM/DD')]}
+                        },
                             {
                                 $set: {
                                     cured: item.cured,
