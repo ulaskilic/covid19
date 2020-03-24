@@ -52,8 +52,8 @@ const generateReport = async () => {
         for (const groupCode of Object.keys(groups)) {
             const group = groups[groupCode];
             const csvWriter = createCsvWriter({
-                header: ['day', 'countryCode', 'countryName', 'region', 'lat', 'lon', 'confirmed', 'cured', 'death'],
-                path: `/root/covid19-timeseries/report/country/${groupCode}.csv`
+                header: ['day', 'countryCode', 'countryName', 'region', 'lat', 'lon', 'confirmed', 'recovered', 'death'],
+                path: `/root/covid19-timeseries/countryReport/country/${groupCode}.csv`
             });
             const records = [];
             for (const row of group) {
@@ -73,8 +73,8 @@ const generateReport = async () => {
         for (const dayKey of Object.keys(days)) {
             const day = days[dayKey];
             const csvWriter = createCsvWriter({
-                header: ['day', 'countryCode', 'countryName', 'region', 'lat', 'lon', 'confirmed', 'cured', 'death'],
-                path: `/root/covid19-timeseries/report/daily/${dayKey.replace(/\//gi,'-')}.csv`
+                header: ['day', 'countryCode', 'countryName', 'region', 'lat', 'lon', 'confirmed', 'recovered', 'death'],
+                path: `/root/covid19-timeseries/countryReport/daily/${dayKey.replace(/\//gi,'-')}.csv`
             });
             if(dayKey === today)
                 continue;
@@ -93,8 +93,8 @@ const generateReport = async () => {
 
     async function rawReport() {
         const csvWriter = createCsvWriter({
-            header: ['day', 'countryCode', 'countryName', 'region', 'lat', 'lon', 'confirmed', 'cured', 'death'],
-            path: `/root/covid19-timeseries/report/raw/rawReport.csv`
+            header: ['day', 'countryCode', 'countryName', 'region', 'lat', 'lon', 'confirmed', 'recovered', 'death'],
+            path: `/root/covid19-timeseries/countryReport/raw/rawReport.csv`
         });
         const records = [];
         for (const row of allDatas) {
