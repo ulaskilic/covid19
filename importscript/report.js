@@ -61,7 +61,7 @@ const generateReport = async () => {
                     continue;
                 records.push([row.day, row.code, row.name, row.region,
                     row.location.coordinates[0], row.location.coordinates[1],
-                    row.confirmed, row.death, row.cured]);
+                    row.confirmed, row.cured, row.death]);
             }
             await csvWriter.writeRecords(records);
         }
@@ -84,7 +84,7 @@ const generateReport = async () => {
                     continue;
                 records.push([row.day, row.code, row.name, row.region,
                     row.location.coordinates[0], row.location.coordinates[1],
-                    row.confirmed, row.death, row.cured]);
+                    row.confirmed, row.cured, row.death]);
             }
             await csvWriter.writeRecords(records);
         }
@@ -102,7 +102,7 @@ const generateReport = async () => {
                 continue;
             records.push([row.day, row.code, row.name, row.region,
                 row.location.coordinates[0], row.location.coordinates[1],
-                row.confirmed, row.death, row.cured]);
+                row.confirmed, row.cured, row.death]);
         }
         await csvWriter.writeRecords(records);
         console.log(`Raw report exported`)
