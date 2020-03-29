@@ -36385,5 +36385,20 @@
     "languages": {
       "eng": "English"
     }
+  },
+  {
+    "name": {
+      "common": "MS Zaandam"
+    },
+    "cca2": "X3",
+    "region": "Asia",
+    "subregion": "Eastern Asia",
+    "latlng": [
+      8.81576,
+      79.57979
+    ],
+    "languages": {
+      "eng": "English"
+    }
   }
 ]
