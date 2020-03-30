@@ -36391,11 +36391,11 @@
       "common": "MS Zaandam"
     },
     "cca2": "X3",
-    "region": "Asia",
-    "subregion": "Eastern Asia",
+    "region": "Americas",
+    "subregion": "North America",
     "latlng": [
-      8.81576,
-      79.57979
+      25.688575,
+      -113.356289
     ],
     "languages": {
       "eng": "English"
