@@ -82,7 +82,7 @@ const MapView = props => {
 
     const calculateRadius = (d) => {
         const percent = (d[layer.key] * 100) / data[`total${layer.key}`];
-        return percent < 5 ? percent * 5 + 5 : percent * 2;
+        return percent < 5 ? percent * 3 + 5 : percent * 3;
     };
 
     const selectLayer = val => {
