@@ -10,6 +10,11 @@ const c = new Crawler();
 const cron = require('node-cron');
 const csvtojson = require('csvtojson');
 
+String.prototype.replaceAll = function(search, replacement) {
+    var target = this;
+    return target.split(search).join(replacement);
+};
+
 const covid19Schema = new mongoose.Schema({
     timestamp: Date,
     day: String,
@@ -53,13 +58,13 @@ const sync = async () => {
 
                 $('#main_table_countries_today tbody tr').each(function (index, elem) {
                     const confirmed = isNaN(parseInt($(elem).children('td').eq(1).text().trim().replace(',', ''))) ? 0 :
-                        parseInt($(elem).children('td').eq(1).text().trim().replace(',', ''));
+                        parseInt($(elem).children('td').eq(1).text().trim().replaceAll(',', ''));
 
                     const death = isNaN(parseInt($(elem).children('td').eq(3).text().trim().replace(',', ''))) ? 0 :
-                        parseInt($(elem).children('td').eq(3).text().trim().replace(',', ''));
+                        parseInt($(elem).children('td').eq(3).text().trim().replaceAll(',', ''));
 
                     const cured = isNaN(parseInt($(elem).children('td').eq(5).text().trim().replace(',', ''))) ? 0 :
-                        parseInt($(elem).children('td').eq(5).text().trim().replace(',', ''));
+                        parseInt($(elem).children('td').eq(5).text().trim().replaceAll(',', ''));
 
                     list.push({
                         country: $(elem).children('td').eq(0).text().trim(),
