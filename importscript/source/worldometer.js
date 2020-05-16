@@ -57,17 +57,17 @@ const sync = async () => {
                 const list = [];
 
                 $('#main_table_countries_today tbody tr').each(function (index, elem) {
-                    const confirmed = isNaN(parseInt($(elem).children('td').eq(1).text().trim().replace(',', ''))) ? 0 :
-                        parseInt($(elem).children('td').eq(1).text().trim().replaceAll(',', ''));
+                    const confirmed = isNaN(parseInt($(elem).children('td').eq(2).text().trim().replace(',', ''))) ? 0 :
+                        parseInt($(elem).children('td').eq(2).text().trim().replaceAll(',', ''));
 
-                    const death = isNaN(parseInt($(elem).children('td').eq(3).text().trim().replace(',', ''))) ? 0 :
-                        parseInt($(elem).children('td').eq(3).text().trim().replaceAll(',', ''));
+                    const death = isNaN(parseInt($(elem).children('td').eq(4).text().trim().replace(',', ''))) ? 0 :
+                        parseInt($(elem).children('td').eq(4).text().trim().replaceAll(',', ''));
 
-                    const cured = isNaN(parseInt($(elem).children('td').eq(5).text().trim().replace(',', ''))) ? 0 :
-                        parseInt($(elem).children('td').eq(5).text().trim().replaceAll(',', ''));
+                    const cured = isNaN(parseInt($(elem).children('td').eq(6).text().trim().replace(',', ''))) ? 0 :
+                        parseInt($(elem).children('td').eq(6).text().trim().replaceAll(',', ''));
 
                     list.push({
-                        country: $(elem).children('td').eq(0).text().trim(),
+                        country: $(elem).children('td').eq(1).text().trim(),
                         confirmed: confirmed,
                         death: death,
                         cured: cured,
